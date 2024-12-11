@@ -485,8 +485,6 @@ footer {
 
   main {
     margin-left: 0;
-    /* Main lowered by mobile nav height so they don't overlap */
-    margin-top: var(--nav-height-mobile);
   }
 
   section {
@@ -494,9 +492,9 @@ footer {
     border-radius: 0;
   }
 
-  h1 {
+  /* h1 {
     padding-top: 0;
-  }
+  } */
 
   .about-card {
     flex-direction: column;
