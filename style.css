@@ -462,6 +462,7 @@ footer {
     flex-direction: column;
     align-items: center;
     padding-inline: 0;
+    padding-top: 0;
     width: 100svw;
     /* Menu out of view when closed*/
     transform: translateY(-200%);
@@ -480,7 +481,7 @@ footer {
 
   /* When checkbox is checked, show menu */
   #toggle:checked ~ .menu {
-    transform: translateY(75px);
+    transform: translateY(84px);
   }
 
   main {
@@ -491,10 +492,6 @@ footer {
     width: 100%;
     border-radius: 0;
   }
-
-  /* h1 {
-    padding-top: 0;
-  } */
 
   .about-card {
     flex-direction: column;
