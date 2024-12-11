@@ -4,7 +4,37 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
-	<title><?php wp_title(''); ?></title>
+	<title>The Girls Portfolio</title>
+    <!-- Favicons displayed based on prefered color scheme mode-->
+    <link
+      rel="icon"
+      type="image/ico"
+      href="imgs/favicon-black.ico"
+      media="(prefers-color-scheme: light)" />
+    <link
+      rel="icon"
+      type="image/ico"
+      href="imgs/favicon-white.ico"
+      media="(prefers-color-scheme: dark)" />
+    <link
+      href="styles.css"
+      rel="stylesheet" />
+    <!--stylesheet linked-->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <!--fonts linked-->
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet" />
+    <!--icons set link-->
+    <script
+      src="https://kit.fontawesome.com/87c69e0790.js"
+      crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

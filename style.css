@@ -1,8 +1,5 @@
 /*  
-
 Theme Name: Veelcheck
-
-
 */
 
 /*global variables*/
@@ -421,39 +418,6 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .gallery {
-    --s: 150px;
-    --g: 10px;
-    --f: 1.5;
-
-    display: grid;
-    gap: var(--g);
-    width: calc(2 * var(--s) + var(--g));
-    aspect-ratio: 1;
-    grid-template-columns: repeat(2, auto);
-  }
-
-  .section-projects {
-    display: grid;
-    place-content: center center;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .row {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .row {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
 /*information and options for mobile display*/
 @media (width <= 991px) {
   :root {
@@ -538,6 +502,38 @@ body {
     padding-bottom: 2rem;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .gallery {
+    --s: 150px;
+    --g: 10px;
+    --f: 1.5;
+
+    display: grid;
+    gap: var(--g);
+    width: calc(2 * var(--s) + var(--g));
+    aspect-ratio: 1;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .section-projects {
+    display: grid;
+    place-content: center center;
+  }
+
+  .row {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
 @media (width <= 699px) {
   form {
     display: block;
