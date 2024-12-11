@@ -49,8 +49,6 @@
         <label
           for="toggle"
           class="menu-icons">
-          <!-- <?php echo wp_get_attachment_image(93, 'full', false, array( "class" => "hamburger", "alt" => "Menu icon" ) );  ?>
-          <?php echo wp_get_attachment_image(92, 'full', false, array( "class" => "close-icon", "alt" => "Close icon" ) );  ?> -->
           <svg
             class="hamburger"
             aria-controls="menu"
