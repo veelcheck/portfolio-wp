@@ -1,6 +1,6 @@
 	<?php wp_footer(); ?>
 	<footer>
-        <ul class="stopka">
+        <ul class="footer">
           <li>&copy;</li>
           <li>
             <a

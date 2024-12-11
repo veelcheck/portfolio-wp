@@ -11,7 +11,7 @@ Theme Name: Veelcheck
   --bg-color-blue: rgb(45, 63, 102);
 }
 
-/*global informations/decisions*/
+/*global styles*/
 * {
   margin: 0;
   padding: 0;
@@ -62,6 +62,7 @@ h1 {
 h2 {
   padding: 1.5rem;
   color: var(--bg-color-mint);
+  text-wrap: balance;
 }
 
 p {
@@ -110,7 +111,7 @@ header {
   z-index: 10;
 }
 
-/*navigation existing inside header*/
+/*navigation inside header*/
 nav {
   display: flex;
   flex-direction: column;
@@ -133,7 +134,7 @@ a {
   color: black;
 }
 
-/*how link looks when you hover mouse over it*/
+/*;inks on moose over*/
 a:hover {
   font-weight: 700;
 }
@@ -401,17 +402,17 @@ footer {
   height: 3rem;
 }
 
-.stopka {
+.footer {
   display: flex;
   gap: 1rem;
 }
 
-.stopka a,
-.stopka li:first-child {
+.footer a,
+.footer li:first-child {
   color: white;
 }
 
-.stopka li:nth-child(3n) {
+.footer li:nth-child(3n) {
   border-inline: 1px solid white;
   padding-inline: 1rem;
 }
