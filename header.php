@@ -49,6 +49,8 @@
         <label
           for="toggle"
           class="menu-icons">
+          <!-- <?php echo wp_get_attachment_image(93, 'full', false, array( "class" => "hamburger", "alt" => "Menu icon" ) );  ?>
+          <?php echo wp_get_attachment_image(92, 'full', false, array( "class" => "close-icon", "alt" => "Close icon" ) );  ?> -->
           <svg
             class="hamburger"
             aria-controls="menu"
@@ -86,21 +88,21 @@
           id="menu"
           class="menu">
           <li>
-            <a href="localhost/wordpress/#team"
+            <a href="#team"
               ><i
                 class="fa-regular fa-circle-user"
                 style="font-size: 30px; color: rgb(37, 56, 41)"></i
             ></a>
           </li>
           <li>
-            <a href="localhost/wordpress/#portfolio"
+            <a href="#portfolio"
               ><i
                 class="fa-regular fa-image"
                 style="font-size: 30px; color: rgb(37, 56, 41)"></i
             ></a>
           </li>
           <li>
-            <a href="localhost/wordpress/#contact"
+            <a href="#contact"
               ><i
                 class="fa-regular fa-address-card"
                 style="font-size: 30px; color: rgb(37, 56, 41)"></i

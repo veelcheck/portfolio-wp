@@ -36,390 +36,390 @@ body {
   animation: gradient 20s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
+}
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 0%;
-    }
-
-    50% {
-      background-position: 100% 100%;
-    }
-
-    100% {
-      background-position: 0% 0%;
-    }
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
   }
 
-  /*general styles*/
-  h1 {
-    text-align: center;
-    padding-top: 3rem;
+  50% {
+    background-position: 100% 100%;
   }
 
-  h2 {
-    padding: 1.5rem;
-  }
-
-  h2 {
-    color: var(--bg-color-mustard);
-  }
-
-  img {
-    height: auto;
-  }
-
-  /* No-preference means the user has not requested reduced motion, so animations and transitions can be enabled. */
-  @media (prefers-reduced-motion: no-preference) {
-    h2 {
-      /* Cubic-bezier for custom flow of animation */
-      animation: bounce-x 3.5s cubic-bezier(0.95, 0.03, 0.95, 0.63);
-    }
-  }
-
-  @keyframes bounce-x {
-    0% {
-      transform: translate(2rem);
-    }
-
-    50% {
-      transform: translate(-1rem);
-    }
-
-    100% {
-      transform: translate(0);
-    }
-  }
-
-  p {
-    max-width: 80ch;
-  }
-
-  /*header details*/
-  header {
-    background-color: var(--bg-color-mint);
-    min-width: var(--nav-width);
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    /* Without it photo-with-tape goes on to of the header when scrolling, don't know why - mask effect used??*/
-    z-index: 10;
-  }
-
-  /*navigation existing inside header*/
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 1rem;
-  }
-
-  /*list inside header*/
-  li {
-    list-style: none;
-  }
-
-  i:hover {
-    scale: 1.1;
-  }
-
-  /*link anchor for navigation*/
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  /*how link looks when you hover mouse over it*/
-  a:hover {
-    font-weight: 700;
-  }
-
-  .menu {
-    padding-top: 2rem;
-    padding-inline: 0.6rem;
-    background-color: var(--bg-color-mint);
-  }
-
-  .menu li {
-    padding-block: 1rem;
-    font-size: 1.5rem;
-  }
-
-  .hamburger,
-  .close-icon,
-  #toggle {
-    display: none;
-  }
-
-  /*main content options*/
-  main {
-    width: 100%;
-    margin-left: var(
-      --nav-width
-    ); /*width is equal to size screen minus the navigation bar*/
-  }
-
-  section {
-    border-radius: var(--border-radius);
-    background-color: rgba(127, 154, 212, 0.95);
-    width: clamp(75svw, 80svw, 85svw);
-    margin: 3em auto;
-    padding: var(--border-radius) 30px;
-  }
-
-  /* About section */
-  .about-card {
-    color: var(--font-color-off-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    max-width: 1200px;
-    margin-inline: auto;
-  }
-
-  /* About section animation */
-
-  /* As the scrolling goes on the about section is fading out */
-
-  /* No media for reduced motion on this one as it is not moving. */
-
-  /* If the animation runs on a browser with no animation-timeline support, the element will render in its final stage with opacity set to 0 (invisible). To avoid this we wrap the animation in @supports => it will only run when the browser supports it, otherwise it will be ignored and opacity 0 will not be applied.*/
-  @supports (animation-timeline: view()) {
-    .about-card {
-      animation: fade-out linear forwards;
-      animation-timeline: view();
-      animation-range: exit -250px;
-    }
-  }
-
-  @keyframes fade-out {
-    to {
-      opacity: 0;
-    }
-  }
-
-  .about-card h2 {
-    color: var(--bg-color-mint);
-  }
-
-  .flex-reverse {
-    flex-direction: row-reverse;
-    justify-content: start;
-  }
-
-  .about-card:nth-child(2n) {
-    border-block: 2px solid black;
-  }
-
-  /* https://css-tip.com/adhesive-tape-image/ */
-  .photo-with-tape {
-    --w: 280px; /* image width */
-    --r: 1; /* image ratio */
-    /* control the tape dimension (adjust to understand) */
-    --l: 45px;
-    --s: 20px;
-
-    --_d: calc(var(--s) + var(--l));
-    width: var(--w);
-    padding: calc(var(--_d) / 2);
-    aspect-ratio: var(--r);
-    object-fit: cover;
-    --_g: calc(100% - var(--w) / 2) /
-      calc(var(--w) * (1 + 1 / var(--r)) - 2 * (var(--s) + var(--_d)));
-    background: repeating-conic-gradient(from 45deg, #0000 0 25%, #0005 0 50%)
-      var(--_g);
-    -webkit-mask: repeating-conic-gradient(from 45deg, #000 0 25%, #0005 0 50%)
-      var(--_g);
-    clip-path: polygon(
-      var(--l) 0,
-      var(--_d) var(--s),
-      calc(100% - var(--_d)) var(--s),
-      calc(100% - var(--l)) 0,
-      100% var(--l),
-      calc(100% - var(--s)) var(--_d),
-      calc(100% - var(--s)) calc(100% - var(--_d)),
-      100% calc(100% - var(--l)),
-      calc(100% - var(--l)) 100%,
-      calc(100% - var(--_d)) calc(100% - var(--s)),
-      var(--_d) calc(100% - var(--s)),
-      var(--l) 100%,
-      0 calc(100% - var(--l)),
-      var(--s) calc(100% - var(--_d)),
-      var(--s) var(--_d),
-      0 var(--l)
-    );
-  }
-
-  .photo-with-tape:hover {
-    transform: scale(1.3);
-  }
-
-  /*gallery setup*/
-
-  .gallery {
-    --s: 225px;
-    --g: 10px;
-    --f: 1.5;
-
-    display: grid;
-    gap: var(--g);
-    width: calc(3 * var(--s) + 2 * var(--g));
-    aspect-ratio: 1;
-    grid-template-columns: repeat(3, auto);
-  }
-
-  .gallery > img {
-    width: 0;
-    height: 0;
-    min-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    filter: grayscale(80%);
-    transition: 0.35s linear;
-  }
-
-  .gallery img:hover {
-    filter: grayscale(0);
-    width: calc(var(--s) * var(--f));
-    height: calc(var(--s) * var(--f));
-  }
-
-  .section-projects {
-    display: grid;
-    place-content: center right;
-  }
-
-  form {
-    border: 2px solid var(--font-color-off-white);
-    border-radius: var(--border-radius);
-    padding: 1rem;
-    background-color: rgb(177, 206, 223);
-    display: grid;
-    grid-template-columns: auto 1fr;
-  }
-
-  form label {
-    display: block;
-    color: black;
-    padding: 0.5rem;
-    font-weight: bold;
-  }
-
-  textarea,
-  select,
-  #user-email {
-    border-radius: 5px;
-    padding: 0.5rem;
-    outline: 2px solid grey;
-    width: 100%;
-  }
-
-  /* For some funny reason input has default styles that select and textarea don't have. With the property below input looks like select and textarea.*/
-  #user-email {
-    border-style: solid;
-    border-width: 1px;
-  }
-
-  select:user-invalid,
-  textarea:user-invalid,
-  #user-email:user-invalid {
-    outline: 2px dotted red;
-  }
-
-  textarea:user-valid,
-  select:user-valid,
-  #user-email:user-valid {
-    outline: 2px solid rgb(15, 112, 99);
-  }
-
-  textarea {
-    height: 200px;
-  }
-
-  .contact-icon-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    align-items: center;
-    height: fit-content;
-    margin-block: auto;
-    padding-inline: 4rem;
-    border-right: 1px solid black;
-  }
-
-  .contact-icon-wrapper > svg {
-    cursor: pointer;
-  }
-
-  .form-input-container {
-    padding-inline: 4rem;
-  }
-
-  .input-wrapper {
-    padding: 1rem;
-  }
-
-  .send-button {
-    padding-inline: 1.5rem;
-    padding-block: 1rem;
-    display: block;
-    margin-inline: auto;
-    background-color: var(--bg-color-blue);
-    color: white;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    border: none;
-    cursor: pointer;
-  }
-
-  .send-button:hover,
-  .send-button:focus {
-    opacity: 0.8;
-  }
-
-  .send-button:focus {
-    outline: 2px solid black;
-  }
-
-  .send-button:active {
-    transform: scale(0.95);
-  }
-
-  /*footer information*/
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(45, 63, 102);
-    border-top: 1px solid rgb(233, 230, 88);
-    width: 100%;
-    height: 3rem;
-  }
-
-  .stopka {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .stopka a,
-  .stopka li:first-child {
-    color: white;
-  }
-
-  .stopka li:nth-child(3n) {
-    border-inline: 1px solid white;
-    padding-inline: 1rem;
+  100% {
+    background-position: 0% 0%;
   }
 }
 
+/*general styles*/
+h1 {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+h2 {
+  padding: 1.5rem;
+}
+
+h2 {
+  color: var(--bg-color-mustard);
+}
+
+img {
+  height: auto;
+}
+
+/* No-preference means the user has not requested reduced motion, so animations and transitions can be enabled. */
+@media (prefers-reduced-motion: no-preference) {
+  h2 {
+    /* Cubic-bezier for custom flow of animation */
+    animation: bounce-x 3.5s cubic-bezier(0.95, 0.03, 0.95, 0.63);
+  }
+}
+
+@keyframes bounce-x {
+  0% {
+    transform: translate(2rem);
+  }
+
+  50% {
+    transform: translate(-1rem);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+p {
+  max-width: 80ch;
+}
+
+/*header details*/
+header {
+  background-color: var(--bg-color-mint);
+  min-width: var(--nav-width);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  /* Without it photo-with-tape goes on to of the header when scrolling, don't know why - mask effect used??*/
+  z-index: 10;
+}
+
+/*navigation existing inside header*/
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+/*list inside header*/
+li {
+  list-style: none;
+}
+
+i:hover {
+  scale: 1.1;
+}
+
+/*link anchor for navigation*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*how link looks when you hover mouse over it*/
+a:hover {
+  font-weight: 700;
+}
+
+.menu {
+  padding-top: 2rem;
+  padding-inline: 0.6rem;
+  background-color: var(--bg-color-mint);
+}
+
+.menu li {
+  padding-block: 1rem;
+  font-size: 1.5rem;
+}
+
+.hamburger,
+.close-icon,
+#toggle {
+  display: none;
+}
+
+/*main content options*/
+main {
+  width: 100%;
+  margin-left: var(
+    --nav-width
+  ); /*width is equal to size screen minus the navigation bar*/
+}
+
+section {
+  border-radius: var(--border-radius);
+  background-color: rgba(127, 154, 212, 0.95);
+  width: clamp(75svw, 80svw, 85svw);
+  margin: 3em auto;
+  padding: var(--border-radius) 30px;
+}
+
+/* About section */
+.about-card {
+  color: var(--font-color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* About section animation */
+
+/* As the scrolling goes on the about section is fading out */
+
+/* No media for reduced motion on this one as it is not moving. */
+
+/* If the animation runs on a browser with no animation-timeline support, the element will render in its final stage with opacity set to 0 (invisible). To avoid this we wrap the animation in @supports => it will only run when the browser supports it, otherwise it will be ignored and opacity 0 will not be applied.*/
+@supports (animation-timeline: view()) {
+  .about-card {
+    animation: fade-out linear forwards;
+    animation-timeline: view();
+    animation-range: exit -250px;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+.about-card h2 {
+  color: var(--bg-color-mint);
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.about-card:nth-child(2n) {
+  border-block: 2px solid black;
+}
+
+/* https://css-tip.com/adhesive-tape-image/ */
+.photo-with-tape {
+  --w: 280px; /* image width */
+  --r: 1; /* image ratio */
+  /* control the tape dimension (adjust to understand) */
+  --l: 45px;
+  --s: 20px;
+
+  --_d: calc(var(--s) + var(--l));
+  width: var(--w);
+  padding: calc(var(--_d) / 2);
+  aspect-ratio: var(--r);
+  object-fit: cover;
+  --_g: calc(100% - var(--w) / 2) /
+    calc(var(--w) * (1 + 1 / var(--r)) - 2 * (var(--s) + var(--_d)));
+  background: repeating-conic-gradient(from 45deg, #0000 0 25%, #0005 0 50%)
+    var(--_g);
+  -webkit-mask: repeating-conic-gradient(from 45deg, #000 0 25%, #0005 0 50%)
+    var(--_g);
+  clip-path: polygon(
+    var(--l) 0,
+    var(--_d) var(--s),
+    calc(100% - var(--_d)) var(--s),
+    calc(100% - var(--l)) 0,
+    100% var(--l),
+    calc(100% - var(--s)) var(--_d),
+    calc(100% - var(--s)) calc(100% - var(--_d)),
+    100% calc(100% - var(--l)),
+    calc(100% - var(--l)) 100%,
+    calc(100% - var(--_d)) calc(100% - var(--s)),
+    var(--_d) calc(100% - var(--s)),
+    var(--l) 100%,
+    0 calc(100% - var(--l)),
+    var(--s) calc(100% - var(--_d)),
+    var(--s) var(--_d),
+    0 var(--l)
+  );
+}
+
+.photo-with-tape:hover {
+  transform: scale(1.3);
+}
+
+/*gallery setup*/
+
+.gallery {
+  --s: 225px;
+  --g: 10px;
+  --f: 1.5;
+
+  display: grid;
+  gap: var(--g);
+  width: calc(3 * var(--s) + 2 * var(--g));
+  aspect-ratio: 1;
+  grid-template-columns: repeat(3, auto);
+}
+
+.gallery > img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: 0.35s linear;
+}
+
+.gallery img:hover {
+  filter: grayscale(0);
+  width: calc(var(--s) * var(--f));
+  height: calc(var(--s) * var(--f));
+}
+
+.section-projects {
+  display: grid;
+  place-content: center right;
+}
+
+form {
+  border: 2px solid var(--font-color-off-white);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  background-color: rgb(177, 206, 223);
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+form label {
+  display: block;
+  color: black;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+textarea,
+select,
+#user-email {
+  border-radius: 5px;
+  padding: 0.5rem;
+  outline: 2px solid grey;
+  width: 100%;
+}
+
+/* For some funny reason input has default styles that select and textarea don't have. With the property below input looks like select and textarea.*/
+#user-email {
+  border-style: solid;
+  border-width: 1px;
+}
+
+select:user-invalid,
+textarea:user-invalid,
+#user-email:user-invalid {
+  outline: 2px dotted red;
+}
+
+textarea:user-valid,
+select:user-valid,
+#user-email:user-valid {
+  outline: 2px solid rgb(15, 112, 99);
+}
+
+textarea {
+  height: 200px;
+}
+
+.contact-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  height: fit-content;
+  margin-block: auto;
+  padding-inline: 4rem;
+  border-right: 1px solid black;
+}
+
+.contact-icon-wrapper > svg {
+  cursor: pointer;
+}
+
+.form-input-container {
+  padding-inline: 4rem;
+}
+
+.input-wrapper {
+  padding: 1rem;
+}
+
+.send-button {
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  display: block;
+  margin-inline: auto;
+  background-color: var(--bg-color-blue);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.send-button:hover,
+.send-button:focus {
+  opacity: 0.8;
+}
+
+.send-button:focus {
+  outline: 2px solid black;
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}
+
+/*footer information*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(45, 63, 102);
+  border-top: 1px solid rgb(233, 230, 88);
+  width: 100%;
+  height: 3rem;
+}
+
+.stopka {
+  display: flex;
+  gap: 1rem;
+}
+
+.stopka a,
+.stopka li:first-child {
+  color: white;
+}
+
+.stopka li:nth-child(3n) {
+  border-inline: 1px solid white;
+  padding-inline: 1rem;
+}
+
 /*information and options for mobile display*/
-@media (width <= 991px) {
+@media screen and (max-width: 991px) {
   :root {
     --nav-height-mobile: 100px;
     --margin-mobile-logo-and-menu-icons: 20%;
@@ -438,8 +438,6 @@ body {
 
   nav {
     height: 100px;
-    /* Magic number - will be changed */
-    padding-top: 0.7rem;
   }
 
   /* For mobile icons */
@@ -534,7 +532,7 @@ body {
   }
 }
 
-@media (width <= 699px) {
+@media screen and (max-width: 699px) {
   form {
     display: block;
   }
@@ -553,7 +551,7 @@ body {
   }
 }
 
-@media (width <= 400px) {
+@media screen and (max-width: 400px) {
   #contact {
     padding-inline: 0;
   }
