@@ -82,30 +82,12 @@
               d="M6 18 18 6M6 6l12 12" />
           </svg>
         </label>
-        <ul
-          id="menu"
-          class="menu">
-          <li>
-            <a href="#team"
-              ><i
-                class="fa-regular fa-circle-user"
-                style="font-size: 30px; color: rgb(37, 56, 41)"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#portfolio"
-              ><i
-                class="fa-regular fa-image"
-                style="font-size: 30px; color: rgb(37, 56, 41)"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#contact"
-              ><i
-                class="fa-regular fa-address-card"
-                style="font-size: 30px; color: rgb(37, 56, 41)"></i
-            ></a>
-          </li>
-        </ul>
+        <?php
+        wp_nav_menu( array(
+            'menu' => 'header',
+            'menu_class'      => 'menu',  // CSS class for styling the menu
+            'container'       => false,   // Avoid adding extra <div> around the menu
+        ) );
+        ?>
       </nav>
   </header>

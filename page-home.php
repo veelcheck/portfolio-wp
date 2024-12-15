@@ -11,50 +11,33 @@
 	<?php while(have_posts()) : the_post(); ?>
     <main>
       <!--section with general info about us-->
-      <h1 id="home">In need of a website? You are in the right place!</h1>
+      <h1 id="home"><?php echo get_field('page_h1') ?></h1>
       <section id="team">
         <div class="section-aboutus">
           <div class="about-card">
-					<?php echo wp_get_attachment_image(76, 'full', false, array( "class" => "photo-with-tape", "alt" => "Female who is not Hania" ) );  ?>
+					  <?php echo wp_get_attachment_image( get_field('team:photo_1'), 'full', false, ["class" => "photo-with-tape"]);  ?>
             <div>
-              <h2>Meet Hania</h2>
+              <h2><?php echo get_field('team:header_1') ?></h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                eius saepe, reprehenderit laudantium deleniti incidunt, rem
-                blanditiis corrupti unde tenetur mollitia maiores quae
-                laboriosam. Accusamus vitae ad delectus deserunt consectetur
-                repudiandae laborum minima quia voluptates consequuntur aliquid
-                expedita nobis rerum saepe, laudantium nemo quasi molestiae
-                veritatis.
+                <?php echo get_field('team:des_1') ?>
               </p>
             </div>
           </div>
           <div class="about-card flex-reverse photo-to-right">
-					<?php echo wp_get_attachment_image(78, 'full', false, array( "class" => "photo-with-tape", "alt" => "Female who is not Inga" ) );  ?>
+					<?php echo wp_get_attachment_image( get_field('team:photo_2'), 'full', false, ["class" => "photo-with-tape"]);  ?>
             <div>
-              <h2>Say Hello to Inga</h2>
+            <h2><?php echo get_field('team:header_2') ?></h2>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Numquam, maxime amet! Amet tempore molestias ratione nesciunt,
-                cumque, voluptate unde numquam harum sapiente, incidunt
-                perspiciatis reprehenderit id corrupti repellat ut dolores
-                architecto at? Recusandae, deserunt officiis! Magnam natus autem
-                consequuntur doloribus maxime vero. Corrupti, quisquam. Animi
-                nesciunt earum eligendi dignissimos cumque veniam neque?
+              <?php echo get_field('team:des_2') ?>
               </p>
             </div>
           </div>
           <div class="about-card">
-					<?php echo wp_get_attachment_image(72, 'full', false, array( "class" => "photo-with-tape", "alt" => "Female who is not Agnieszka" ) );  ?>
+					<?php echo wp_get_attachment_image( get_field('team:photo_3'), 'full', false, ["class" => "photo-with-tape"]);  ?>
             <div>
-              <h2>Get To Know Agnieszka</h2>
+            <h2><?php echo get_field('team:header_3') ?></h2>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
-                molestiae voluptas aut debitis. Quos non velit corrupti aliquid
-                fuga quod facere, iure ea, suscipit minus aperiam excepturi
-                natus debitis ducimus porro? Nobis illum similique, animi esse
-                quam eius et error. Illum accusantium tempora quibusdam atque
-                facilis?
+              <?php echo get_field('team:des_3') ?>
               </p>
             </div>
           </div>

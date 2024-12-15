@@ -34,5 +34,49 @@ function fix_svg_preview() {
 }
 add_action('admin_head', 'fix_svg_preview');
 
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+// function my_wp_nav_menu_objects( $items, $args ) {
+    
+//     // loop
+//     foreach( $items as &$item ) {
+        
+//         // vars
+//         $icon = get_field('ikony_menu', $item);
+        
+        
+//         // append icon
+//         if( $icon ) {
+            
+//             $item->title .= ' <i class=""></i>';
+            
+//         }
+        
+//     }
+    
+    
+//     // return
+//     return $items;
+    
+// }
+
+function my_wp_nav_menu_objects( $items, $args ) {
+  // Loop through each menu item
+  foreach( $items as &$item ) {
+      
+      // Get the custom field (e.g., 'ikony_menu') for this menu item
+      $icon_class = get_field('ikony_menu', $item);  // Assuming ACF is being used
+      
+      // If there's an icon class, add the <i> tag to the item
+      if( $icon_class ) {
+          // Append icon <i> tag before the link text
+          $item->title = '<i class="' . esc_attr($icon_class) . '" style="font-size: 30px; color: rgb(37, 56, 41)"></i> ';
+      }
+  }
+  
+  return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2 );
+
 
 ?>
