@@ -5,7 +5,6 @@
  */
 ?>
 
-
 <?php get_header(); ?>
 <?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
@@ -48,7 +47,6 @@
         <div class="section-projects">
           <div class="gallery">
             <?php echo wp_get_attachment_image(74, 'full', false, array( "class" => "portfolio", "alt" => "Girl" ) );  ?>
-           
             <?php echo wp_get_attachment_image(73, 'full', false, array( "class" => "portfolio", "alt" => "Citrus" ) );  ?>
             <?php echo wp_get_attachment_image(75, 'full', false, array( "class" => "hand", "alt" => "Citrus" ) );  ?>
             <?php echo wp_get_attachment_image(79, 'full', false, array( "class" => "hand", "alt" => "Lamp" ) );  ?>
