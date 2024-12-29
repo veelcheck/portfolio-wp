@@ -82,12 +82,10 @@
               d="M6 18 18 6M6 6l12 12" />
           </svg>
         </label>
-        <?php
-        wp_nav_menu( array(
-            'menu' => 'header',
-            'menu_class'      => 'menu',  // CSS class for styling the menu
-            'container'       => false,   // Avoid adding extra <div> around the menu
-        ) );
-        ?>
+        <!-- TODO warunek do wyświetlenia menu w odpowiednim języku, zrobić menu w wordpress -->
+        <?php if(pll_current_language() === 'pl') {?>
+            <?php wp_nav_menu(array ('menu' => 'header', 'container' => false, 'menu_class' => 'menu')); ?>
+          <?php } else {?> <?php wp_nav_menu(array('menu' => 'header-eng', 'container' => false, 'menu_class' => 'menu')); ?>
+            <?php } ?>
       </nav>
   </header>

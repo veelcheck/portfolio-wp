@@ -2,8 +2,8 @@
 
 function theme_scripts_method(){
   wp_enqueue_style( 'style', get_stylesheet_uri() );
-  wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
-  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array (), 1.0, false);
+  // wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+  // wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array (), 1.0, false);
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts_method');
@@ -34,32 +34,6 @@ function fix_svg_preview() {
 }
 add_action('admin_head', 'fix_svg_preview');
 
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-
-// function my_wp_nav_menu_objects( $items, $args ) {
-    
-//     // loop
-//     foreach( $items as &$item ) {
-        
-//         // vars
-//         $icon = get_field('ikony_menu', $item);
-        
-        
-//         // append icon
-//         if( $icon ) {
-            
-//             $item->title .= ' <i class=""></i>';
-            
-//         }
-        
-//     }
-    
-    
-//     // return
-//     return $items;
-    
-// }
-
 function my_wp_nav_menu_objects( $items, $args ) {
   // Loop through each menu item
   foreach( $items as &$item ) {
@@ -77,6 +51,4 @@ function my_wp_nav_menu_objects( $items, $args ) {
   return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2 );
-
-
 ?>

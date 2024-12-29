@@ -1,7 +1,7 @@
 <?php
 /*
- * Template Name: Home
- * Description: A custom template for the homepage.
+ * Template Name: Strona Główna
+ * Description: Szablon strony głownej.
  */
 ?>
 
@@ -61,8 +61,8 @@
       <!--section with contact info/form-->
       <section id="contact">
         <div class="section-contacts">
-          <h2>Wanna get in touch?</h2>
-          <?php echo do_shortcode( '[contact-form-7 id="b355487" title="Formularz 1"]') ?>
+        <h2>Masz pytania?</h2>
+          <?php echo do_shortcode( '[contact-form-7 id="6d3bfd9" title="Formularz PL"]') ?>
         </div>
       </section>
 	<?php endwhile; ?>
