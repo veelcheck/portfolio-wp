@@ -61,8 +61,12 @@
       <!--section with contact info/form-->
       <section id="contact">
         <div class="section-contacts">
-          <h2>Wanna get in touch?</h2>
-          <?php echo do_shortcode( '[contact-form-7 id="b355487" title="Formularz 1"]') ?>
+          <h2><?php echo get_field('contact:header_1') ?></h2>
+          <!-- <?php echo do_shortcode( '[contact-form-7 id="b355487" title="Formularz 1"]') ?> -->
+          <?php if(pll_current_language() === 'pl') {?>
+            <?php echo do_shortcode( '[contact-form-7 id="6d3bfd9" title="Formularz PL"]') ?>
+          <?php } else {?> <?php echo do_shortcode( '[contact-form-7 id="b355487" title="Formularz 1"]'); ?>
+            <?php } ?>
         </div>
       </section>
 	<?php endwhile; ?>
