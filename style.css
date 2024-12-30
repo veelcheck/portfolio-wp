@@ -150,6 +150,7 @@ a:hover {
   font-size: 1.5rem;
 }
 
+/* Overriding loco-translate styles for flags*/
 #menu-item-236-pl a img,
 #menu-item-238-en a img {
   filter: grayscale(100%) contrast(170%);
@@ -580,11 +581,4 @@ footer {
     height: 40px;
     width: 40px;
   }
-}
-
-.wp-block-gallery,
-.wp-block-table,
-.wp-block-bookly-form {
-  max-width: 900px;
-  margin-inline: auto;
 }

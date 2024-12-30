@@ -1,0 +1,28 @@
+/* Page cannot be found */
+.error-404 {
+  height: calc(100svh - 48px);
+}
+
+/* Ungrateful fight with styling img + p hack --WORDPRESS TASKS SECTION--*/
+.wp-block-gallery,
+.wp-block-table,
+.wp-block-bookly-form {
+  border-radius: var(--border-radius);
+  background-color: rgba(127, 154, 212, 0.95);
+  width: clamp(75svw, 80svw, 85svw);
+  margin: 3em auto;
+  padding: var(--border-radius) 30px;
+}
+
+.wp-block-image,
+.p_image {
+  margin-left: 10%;
+}
+
+.p_image {
+  margin-right: 10%;
+}
+
+.wp-block-image img {
+  border-radius: var(--border-radius);
+}

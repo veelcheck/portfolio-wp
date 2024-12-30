@@ -1,9 +1,10 @@
 <?php
 
 function theme_scripts_method(){
+  // Enqueue the default styles.css file
   wp_enqueue_style( 'style', get_stylesheet_uri() );
-  // wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
-  // wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array (), 1.0, false);
+  // Enqueue the additional sites.css file
+  wp_enqueue_style('sites-style', get_stylesheet_directory_uri() . '/sites.css', array('style'), '1.0', 'all');
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts_method');
