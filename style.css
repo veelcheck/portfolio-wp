@@ -320,7 +320,7 @@ form label {
 
 textarea,
 select,
-#user-email {
+.wpcf7-email {
   border-radius: 5px;
   padding: 0.5rem;
   outline: 2px solid grey;
@@ -328,9 +328,10 @@ select,
 }
 
 /* For some funny reason input has default styles that select and textarea don't have. With the property below input looks like select and textarea.*/
-#user-email {
+.wpcf7-email {
   border-style: solid;
   border-width: 1px;
+  height: 36px;
 }
 
 select:user-invalid,
